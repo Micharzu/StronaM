@@ -8,4 +8,4 @@ I also was naming my properties in Polish.
 It uses pdf-viewer to display sheets and nxg-audio-player to play the audio of the song.
 Database and storage are utilizing Firebase.
 
-Upload is handled by the cloud fire storage function in another file.
+Upload is handled by the cloud function in another file.
