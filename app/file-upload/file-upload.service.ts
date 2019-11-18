@@ -24,7 +24,7 @@ export class FileUploadService{
         const formData = new FormData();
         const path = tytul + '-' + autor + typPliku;
         formData.append('file', wybranyPlik, path);
-        this.http.post('https://us-central1-stronam-723e5.cloudfunctions.net/uploadFile', formData,
+        this.http.post('url of upload cloud function', formData,
         {
             reportProgress: true,
             observe: 'events'
