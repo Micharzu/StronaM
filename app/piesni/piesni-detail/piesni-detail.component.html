@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{piesn.tytul}}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        {{piesn.autor}}
+    </div>
+</div>
+
+<div *ngIf="piesn.audio">
+    <div *ngIf="isLoading&&!isMP3">
+        <h3>Ładuję...</h3>
+    </div>
+            
+    <div *ngIf="isMP3" class="row">
+        <div class="col-xs-12">
+            <mat-basic-audio-player
+                [audioUrl]="mp3"
+                [title]="piesn.tytul" 
+                [displayTitle]="wyswietlTytul"
+                [displayVolumeControls]="wyswietlMikserGlosnosci" >
+            </mat-basic-audio-player>
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="!piesn.audio" class="row">
+    <div class="col-xs-12" style="text-align: center;">
+        <h5>Brak pliku audio.</h5>
+    </div>
+</div>
+
+<div *ngIf="piesn.nuty">
+    <div *ngIf="isLoading&&!isPDF">
+        <h3>Ładuję...</h3>
+    </div>
+            
+    <div *ngIf="isPDF" class="row">
+        <div class="col-xs-12">
+            <pdf-viewer
+            [src]="pdf">
+            </pdf-viewer>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!piesn.nuty" class="row">
+    <div class="col-xs-12" style="text-align: center;">
+        <h5>Brak nut.</h5>
+    </div>
+</div>
